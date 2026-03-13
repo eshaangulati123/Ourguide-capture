@@ -1,49 +1,8 @@
-# OpenAdapt Capture
-
-[![Build Status](https://github.com/OpenAdaptAI/openadapt-capture/actions/workflows/test.yml/badge.svg)](https://github.com/OpenAdaptAI/openadapt-capture/actions/workflows/test.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
-
-[![PyPI version](https://img.shields.io/pypi/v/openadapt-capture.svg)](https://pypi.org/project/openadapt-capture/)
-[![Downloads](https://img.shields.io/pypi/dm/openadapt-capture.svg)](https://pypi.org/project/openadapt-capture/)
-
-**OpenAdapt Capture** is the data collection component of the [OpenAdapt](https://github.com/OpenAdaptAI) GUI automation ecosystem.
 
 Capture platform-agnostic GUI interaction streams with time-aligned screenshots and audio for training ML models or replaying workflows.
 
 > **Status:** Pre-alpha.
 
----
-
-## The OpenAdapt Ecosystem
-
-```
-                          OpenAdapt GUI Automation Pipeline
-                          =================================
-
-    +-----------------+          +------------------+          +------------------+
-    |                 |          |                  |          |                  |
-    | openadapt-      |  ------> | openadapt-ml     |  ------> |    Deploy        |
-    | capture         |  Convert | (Train & Eval)   |  Export  |    (Inference)   |
-    |                 |          |                  |          |                  |
-    +-----------------+          +------------------+          +------------------+
-          |                             |                             |
-          v                             v                             v
-    - Record GUI                  - Fine-tune VLMs              - Run trained
-      interactions                - Evaluate on                   agent on new
-    - Mouse, keyboard,              benchmarks (WAA)              tasks
-      screen, audio               - Compare models              - Real-time
-    - Privacy scrubbing           - Cloud GPU training            automation
-
-```
-
-| Component | Purpose | Repository |
-|-----------|---------|------------|
-| **openadapt-capture** | Record human demonstrations | [GitHub](https://github.com/OpenAdaptAI/openadapt-capture) |
-| **openadapt-ml** | Train and evaluate GUI automation models | [GitHub](https://github.com/OpenAdaptAI/openadapt-ml) |
-| **openadapt-privacy** | PII scrubbing for recordings | [GitHub](https://github.com/OpenAdaptAI/openadapt-privacy) |
-
----
 
 ## Installation
 
@@ -224,13 +183,6 @@ uv run pytest tests/ -v --ignore=tests/test_browser_bridge.py
 # Run slow integration tests (requires accessibility permissions)
 uv run pytest tests/ -v -m slow
 ```
-
-## Related Projects
-
-- [openadapt-ml](https://github.com/OpenAdaptAI/openadapt-ml) - Train and evaluate GUI automation models
-- [openadapt-privacy](https://github.com/OpenAdaptAI/openadapt-privacy) - PII detection and scrubbing for recordings
-- [openadapt-evals](https://github.com/OpenAdaptAI/openadapt-evals) - Benchmark evaluation for GUI agents
-- [Windows Agent Arena](https://github.com/microsoft/WindowsAgentArena) - Benchmark for Windows GUI agents
 
 ## License
 
